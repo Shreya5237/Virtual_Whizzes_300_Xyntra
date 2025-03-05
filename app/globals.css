@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 270 100% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 59% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 39 96% 64%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 270 100% 64%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 270 100% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 59% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 39 96% 64%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 270 100% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.image-hover {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 1rem;
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple to-teal;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-purple-light via-teal-light to-orange-light;
+}
+
+.card-gradient {
+  @apply bg-gradient-to-br from-white to-gray-50;
+}
+
+.pattern-dots {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-waves {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264.888-.14 1.24.19 1.64.39 1.85.39h1.87c.698-.098 1.4-.393 1.682-.837.282-.444.284-.97.16-1.246-.125-.277-.463-.412-.754-.412-.29 0-.58.128-.704.26-.124.132-.192.44-.192.567 0 .127.094.254.197.38.103.123.206.248.206.374 0 .075-.035.148-.12.22-.464.39-1.293.346-1.638.346H22.5c-.22 0-.95-.154-1.14-.154-.19 0-.52.07-.52.44 0 .19.19.38.38.38.39.04.8-.01 1.14-.15zm-9.41 1.97c.702 0 1.27-.207 1.695-.55.13-.098.21-.19.21-.38 0-.19-.1-.38-.31-.47-.2-.09-.42-.07-.6-.07-.4.05-.76.27-1.14.42-.38.15-.76.29-1.14.29-.92 0-2.09-.58-2.28-1.53-.19-.95.2-1.88 1.14-2.3.94-.42 1.99-.16 2.74.22.75.38 1.24.89 1.24 1.71 0 .82-.54 1.57-1.19 2.1-.65.51-1.51.77-2.2.77-.69 0-1.29-.27-1.89-.27-.6 0-1.12.27-1.12.87 0 .19.09.38.19.47.1.09.19.29.29.29.1.09.28.18.38.18.1 0 .3-.09.3-.09zm-1.62-1.19c-.06-.67.18-1.66.82-2.27.96-.92 2.44-1.08 3.12-.08.68 1.08-.21 2.85-1.54 3.35-1.26.5-2.4-.35-2.4-1zm18.62 3.09c1.07 0 1.8-.86 1.8-1.72 0-.86-.52-1.72-1.55-1.72-1.03 0-1.6.86-1.6 1.72 0 .86.79 1.72 1.35 1.72z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: float 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+.bubble-1 {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bubble-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  left: 80%;
+  animation-delay: 1s;
+}
+
+.bubble-3 {
+  width: 80px;
+  height: 80px;
+  top: 40%;
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.bubble-4 {
+  width: 120px;
+  height: 120px;
+  top: 70%;
+  left: 20%;
+  animation-delay: 3s;
+}
+
+.bubble-5 {
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
